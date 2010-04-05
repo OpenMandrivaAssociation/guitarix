@@ -2,6 +2,8 @@
 %define version         0.07.0
 %define release         %mkrel 1
 
+%define ladspadir       %{_libdir}/ladspa
+
 Name:           %{name}
 Summary:        Guitar effect processor for JACK
 Version:        %{version} 
@@ -13,7 +15,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:        GPLv2
 Group:          Sound
 BuildRequires:  gtk+2-devel
-BuildRequires:  libsndfile-devel, jackit-devel
+BuildRequires:  sndfile-devel jackit-devel
+BuildRequires:  libzita-convolver-devel
 BuildRequires:  faust 
 Requires:       ladspa
 
@@ -29,7 +32,7 @@ impulse response, vibrato, chorus, delay , crybaby(wah) and echo.
 %setup -q
 
 %build
-./waf configure --prefix=%{_prefix} --faust
+./waf configure --prefix=%{_prefix} --ladspadir=%ladspadir --faust
 ./waf build
 
 %install
@@ -37,8 +40,8 @@ rm -rf %{buildroot}
 ./waf install --destdir=%{buildroot}
 desktop-file-install --add-category="X-MandrivaLinux-Multimedia-Sound;" \
                      --remove-category="X-Jack;" \
+                     --remove-category="Midi;" \
                      --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
-
 %clean
 rm -rf %{buildroot}
 
@@ -51,5 +54,5 @@ rm -rf %{buildroot}
 %{_datadir}/%{name}/skins/*.rc
 %{_datadir}/%{name}/builder/*.glade
 %{_datadir}/applications/%{name}.desktop
-%{_libdir}/ladspa/*.so
+%ladspadir/*.so
 %{_datadir}/ladspa/rdf/*.rdf
