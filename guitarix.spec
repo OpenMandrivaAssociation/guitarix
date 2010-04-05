@@ -14,7 +14,7 @@ URL:            http://guitarix.sourceforge.net/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:        GPLv2
 Group:          Sound
-BuildRequires:  sigc++2.0-devel fftw3-devel
+BuildRequires:  sigc++2.0-devel fftw3-devel ladspa-devel
 BuildRequires:  gtk+2-devel
 BuildRequires:  sndfile-devel jackit-devel
 BuildRequires:  libzita-convolver-devel
