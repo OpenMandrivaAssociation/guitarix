@@ -15,7 +15,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:        GPLv2
 Group:          Sound
 BuildRequires:  sigc++2.0-devel fftw3-devel ladspa-devel
-BuildRequires:  gtk+2-devel
+BuildRequires:  gtk+2-devel gtkmm2.4-devel
 BuildRequires:  sndfile-devel jackit-devel
 BuildRequires:  libzita-convolver-devel
 BuildRequires:  faust 
