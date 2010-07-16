@@ -1,5 +1,5 @@
 %define name            guitarix
-%define version         0.07.0
+%define version         0.10.0
 %define release         %mkrel 1
 
 %define ladspadir       %{_libdir}/ladspa
