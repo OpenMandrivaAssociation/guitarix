@@ -1,5 +1,5 @@
 %define name            guitarix
-%define version         0.10.0
+%define version         0.11.0
 %define release         %mkrel 1
 
 %define ladspadir       %{_libdir}/ladspa
@@ -52,6 +52,7 @@ rm -rf %{buildroot}
 %{_bindir}/guitarix
 %{_datadir}/pixmaps/*.png
 %{_datadir}/%{name}/skins/*.jpg
+%{_datadir}/%{name}/skins/*.png
 %{_datadir}/%{name}/skins/*.rc
 %{_datadir}/%{name}/builder/*.glade
 %{_datadir}/applications/%{name}.desktop
