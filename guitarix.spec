@@ -10,7 +10,7 @@ Version:        %{version}
 Release:        %{release}
 
 Source:         http://prdownloads.sourceforge.net/guitarix/%{name}-%{version}.tar.bz2
-URL:            http://guitarix.sourceforge.net/
+URL:            https://guitarix.sourceforge.net/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:        GPLv2
 Group:          Sound
